@@ -117,42 +117,21 @@ export default function TeamManagementPage() {
           </p>
         </div>
 
-        {/* Live Simulation Switcher (To test lakminiirosha6@gmail.com vs standard admin) */}
-        <div className="p-3 bg-zinc-900/90 border border-zinc-800 rounded-lg flex flex-col sm:flex-row items-start sm:items-center gap-3">
+        {/* Active Operator Status */}
+        <div className="p-3 bg-zinc-900/90 border border-zinc-800 rounded-lg flex items-center gap-3">
           <div className="text-xs">
-            <span className="text-zinc-500 font-mono block">Simulate Logged Email:</span>
-            <span className="font-mono text-xs text-white truncate max-w-[200px] block">
+            <span className="text-zinc-500 font-mono block">Logged-In Operator:</span>
+            <span className="font-mono text-xs text-white truncate max-w-[220px] block font-bold">
               {currentUserEmail}
             </span>
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                setCurrentUserEmail("lakminiirosha6@gmail.com");
-                setActionError(null);
-              }}
-              className={`text-xs px-2.5 py-1 rounded font-mono transition-colors ${
-                isSuperAdminUser
-                  ? "bg-yellow-400/20 text-[#ffeb3b] border border-yellow-400/40 font-bold"
-                  : "bg-zinc-800 text-zinc-400 hover:text-white"
-              }`}
-            >
-              lakminiirosha6 (Super)
-            </button>
-            <button
-              onClick={() => {
-                setCurrentUserEmail("kasun.admin@filaxstore.com");
-                setIsAddOwnerModalOpen(false);
-              }}
-              className={`text-xs px-2.5 py-1 rounded font-mono transition-colors ${
-                !isSuperAdminUser
-                  ? "bg-cyan-500/20 text-[#00ffff] border border-cyan-500/40 font-bold"
-                  : "bg-zinc-800 text-zinc-400 hover:text-white"
-              }`}
-            >
-              Other Admin
-            </button>
-          </div>
+          <span className={`text-xs px-2.5 py-1 rounded font-mono font-bold ${
+            isSuperAdminUser
+              ? "bg-yellow-400/20 text-[#ffeb3b] border border-yellow-400/40"
+              : "bg-cyan-500/20 text-[#00ffff] border border-cyan-500/40"
+          }`}>
+            Role: {permissions.displayRole}
+          </span>
         </div>
       </div>
 
