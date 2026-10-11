@@ -1,0 +1,6 @@
+{
+  "name": "Filax Store - Gaming Topup Store & Admin Dashboard",
+  "description": "High-performance gaming topup store and admin portal with NextAuth Google login, Firebase Firestore, role-based access control, and specialized Super Admin privileges for lakminiirosha6@gmail.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
